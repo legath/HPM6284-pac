@@ -1,0 +1,42 @@
+#[doc = "Register `RXWRD[%s]` reader"]
+pub type R = crate::R<RXWRD_SPEC>;
+#[doc = "Register `RXWRD[%s]` writer"]
+pub type W = crate::W<RXWRD_SPEC>;
+#[doc = "Field `RXFIFO` reader - RXFIFO for receiving message from other core, FIFO size, 4x32 can read one of the word address to pop data to the FIFO; can also use 4x32 burst read from 0x020 to read 4 words from the FIFO."]
+pub type RXFIFO_R = crate::FieldReader<u32>;
+impl R {
+    #[doc = "Bits 0:31 - RXFIFO for receiving message from other core, FIFO size, 4x32 can read one of the word address to pop data to the FIFO; can also use 4x32 burst read from 0x020 to read 4 words from the FIFO."]
+    #[inline(always)]
+    pub fn rxfifo(&self) -> RXFIFO_R {
+        RXFIFO_R::new(self.bits)
+    }
+}
+impl W {
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.bits = bits;
+        self
+    }
+}
+#[doc = "no description available\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxwrd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxwrd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct RXWRD_SPEC;
+impl crate::RegisterSpec for RXWRD_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`rxwrd::R`](R) reader structure"]
+impl crate::Readable for RXWRD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rxwrd::W`](W) writer structure"]
+impl crate::Writable for RXWRD_SPEC {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+#[doc = "`reset()` method sets RXWRD[%s]
+to value 0"]
+impl crate::Resettable for RXWRD_SPEC {
+    const RESET_VALUE: u32 = 0;
+}
